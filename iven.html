@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <style>
+    .btn {
+      border: solid 1px;
+      border-color: black;
+      background-color: white;
+      font-size: 20ex;
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      margin-top: 50px;
+      cursor: pointer;
+    }
+  </style>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js' integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==' crossorigin='anonymous'></script>
+  
+</head>
+<body>
+  <input type="button" value="紅綠燈" class="btn" onclick="toggleLight();">
+</body>
+<script>
+  let lightState = "white"; // Initial state
+  function toggleLight() {
+    if (lightState === "white") {
+      lightState = "red";
+    } else if (lightState === "red") {
+      lightState = "green";
+    } else {
+      lightState = "red";
+    }
+    updateLight();
+  }
+  function updateLight() {
+    if (lightState === "white") {
+      $(".btn").css({
+        "border-color": "black",
+        "color": "black",
+        "background-color": "white"
+      });
+    } else if (lightState === "red") {
+      $(".btn").css({
+        "border-color": "black",
+        "color": "white",
+        "background-color": "red"
+      });
+    } else {
+      $(".btn").css({
+        "border-color": "black", // Adjust border color for green
+        "color": "white",
+        "background-color": "green"
+      });
+    }
+  }
+</script>
+</html>
